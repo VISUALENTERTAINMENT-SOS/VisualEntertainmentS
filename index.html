@@ -1,35 +1,119 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Galaxy Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Your Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Link ke CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #2b1055, #000000);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px #a020f0;
+      width: 300px;
+    }
+
+    h1 {
+      color: #d580ff;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 15px;
+      width: 90%;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      background: #a020f0;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #d580ff;
+    }
+
+    #welcomeText {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- Background Glow -->
-    <div class="background"></div>
+  <div class="container">
+    <h1>✨ My Profil ✨</h1>
+    <p>Silahkan Kse Mso Ngoni Pe Nama 👇</p>
 
-    <!-- Container -->
-    <div class="container">
-        <h1 class="title">✨ My Galaxy Portfolio ✨</h1>
+    <input type="text" id="username" placeholder="Tulis namamu di sini">
+    <button onclick="submitName()">Masuk</button>
 
-        <p class="subtitle">Masukkan namamu dulu 👇</p>
+    <h2 id="welcomeText"></h2>
+  </div>
 
-        <input type="text" id="username" placeholder="Tulis namamu di sini">
-        <button onclick="submitName()">Masuk</button>
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-        <h2 id="welcomeText"></h2>
-    </div>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCsNCyeFGW9PkJqMHJOy9q17cM1CcnB3_U",
+      authDomain: "vstre0302.firebaseapp.com",
+      projectId: "vstre0302",
+      storageBucket: "vstre0302.firebasestorage.app",
+      messagingSenderId: "249350691690",
+      appId: "1:249350691690:web:84e3ae3fe51fe05b84e313"
+    };
 
-    <!-- Link ke JavaScript -->
-    <script src="script.js"></script>
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    window.submitName = async function () {
+      const name = document.getElementById("username").value;
+      const welcomeText = document.getElementById("welcomeText");
+
+      if (name === "") {
+        alert("Isi nama dulu ya!");
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, "visitors"), {
+          name: name,
+          time: new Date()
+        });
+
+        welcomeText.innerHTML = "Selamat datang, " + name + " 🚀";
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+  </script>
 
 </body>
 </html>
