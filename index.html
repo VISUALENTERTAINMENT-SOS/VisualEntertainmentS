@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sandag — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+<!-- [GANTI 1] Bootstrap CSS harus SEBELUM style.css -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+</head>
+<body class="is-loading">
+
+<!-- LOADING -->
+<div class="loader" id="loader">
+  <div class="loader__center">
+    <div class="loader__jp">LOADING</div>
+    <div class="loader__bar"><i id="bar"></i></div>
+    <div class="loader__meta"><span></span><span id="pct">000</span></div>
+  </div>
+</div>
+<div class="curtain" id="curtain"></div>
+
+<!-- NAVBAR (struktur navbar Bootstrap, tampilan teks transparan) -->
+<nav class="topnav navbar navbar-expand" aria-label="Navigasi utama">
+  <ul class="navbar-nav">
+    <li class="nav-item"><a class="nav-link" href="#home" data-page="home" aria-current="page">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="#about" data-page="about">About me</a></li>
+    <li class="nav-item"><a class="nav-link" href="#skills" data-page="skills">Skills</a></li>
+    <li class="nav-item"><a class="nav-link" href="#journey" data-page="journey">My journey</a></li>
+    <li class="nav-item"><a class="nav-link" href="#music" data-page="music">Music taste</a></li>
+    <li class="nav-item"><a class="nav-link" href="#contact" data-page="contact">Contact</a></li>
+    <li class="nav-item"><button type="button" class="theme-toggle" id="themeToggle" aria-label="Ganti ke tema gelap" aria-pressed="false" title="Ganti tema"></button></li>
+  </ul>
+</nav>
+
+<!-- BERANDA -->
+<header class="hero page active" id="beranda" data-page="home">
+  <div class="hero__frame">
+    <div class="hero__brand"><b>ADJS</b><p><br></p></div>
+    <div class="hero__date"><em>Portfolio 2026</em><small>Project by Sandag</small></div>
+    <div class="hero__lines"><i></i><i></i><i></i><i></i><i></i></div>
+    <h1 class="hero__name" aria-label="Sandag"><span>S</span><span>A</span><span>N</span><span>D</span><span>A</span><span>G</span></h1>
+    <div class="hero__script">Anugrah Daniel Junior</div>
+    <div class="hero__news"><h4>PORTOFOLIO?</h4><p>MAHASISWA UNIVERSITAS KLABAT</p></div>
+    <div class="hero__quote"><h4>The Quote is:</h4><p>Yesterday Is History, Tomorrow Is Mystery. But Today Is A Gift</p><small></small></div>
+    <span class="hero__scroll">SCROLL</span>
+  </div>
+  <img class="hero__photo" src="img/sandag.png" alt="Sandag">
+</header>
+
+
+<!-- ABOUT -->
+<section class="about page" id="page-about" data-page="about">
+  <div class="tag"><i></i> 01 — About me</div>
+  <div class="about__grid">
+    <div class="about__text" id="aboutText">
+      <h2 class="l">Halo, aku <em>Sandag!</em></h2>
+      <!-- GANTI PARAGRAF DI BAWAH DENGAN TEKSMU SENDIRI -->
+      <p class="l">Perkenalkan nama saya Anugrah Sandag, mahasiswa dari universitas klabat, berfakultas ilmu komputer dan berjurusan sistem informasi.</p>
+      <p class="l">Website ini menggunakan 2 Bahasa pemograman utam yaitu CSS, dan JavaScript, dengan HTML sebagai kerangka dalam website. Saya juga menambahkan beberapa tools dalam website saya sebagai pendukung yaitu bootstrap dan VS Code. Ada juga AI yang saya gunakna yaitu ClaudeAI dengan website yang saya deploy dalam GitHub.</p>
+      <p class="l">Website ini bertujuan untuk memperkenalkan portofolio diri saya sendiri mulai dari skill yang saya pelajari, perjalanan saya, dan pengalaman saya.</p>
+    </div>
+    <figure class="about__photo" id="aboutPhoto"><img src="img/portrait.jpg" alt="Foto Sandag"></figure>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills page" id="page-skills" data-page="skills">
+  <div class="tag"><i></i> 02 — My skills</div>
+  <!-- GANTI SEMUA TEKS DI HALAMAN INI DENGAN TEKSMU SENDIRI -->
+  <h2 class="skills__title">Skill yang <em>kupelajari</em></h2>
+  <p class="skills__lead">Ini adalah bahasa dan teknologi yang aku pelajari selama kuliah, dan aku gunakan untuk membangun website portofolio ini.</p>
+
+  <ul class="skills__grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 g-3 g-lg-4" id="skillsGrid">
+    <li class="col" style="--d:0">
+      <a class="sk h-100" href="#skillModal" role="button" data-bs-toggle="modal" data-bs-target="#skillModal"
+         data-name="HTML" data-img="img/html.png" data-tags="Struktur,Konten,Navigasi"
+         data-detail="HTML adalah kerangka dari setiap website. Di portofolio ini, HTML dipakai untuk menyusun halaman, judul, teks, gambar, dan menu navigasi.">
+        <div class="sk__img"><img src="img/html.png" alt="Logo HTML"></div>
+        <span class="sk__no">01</span>
+        <h3 class="sk__name">HTML</h3>
+        <p class="sk__desc">Membangun kerangka dan isi halaman, seperti judul, teks, gambar, dan menu.</p>
+        <span class="sk__more">Lihat detail <b aria-hidden="true">+</b></span>
+      </a>
+    </li>
+    <li class="col" style="--d:1">
+      <a class="sk h-100" href="#skillModal" role="button" data-bs-toggle="modal" data-bs-target="#skillModal"
+         data-name="CSS" data-img="img/css.png" data-tags="Tata letak,Warna,Animasi"
+         data-detail="CSS mengatur tampilan: warna, huruf, tata letak, dan animasi. Seluruh desain portofolio ini ditulis dengan CSS.">
+        <div class="sk__img"><img src="img/css.png" alt="Logo CSS"></div>
+        <span class="sk__no">02</span>
+        <h3 class="sk__name">CSS</h3>
+        <p class="sk__desc">Mengatur tampilan, warna, dan animasi supaya website terlihat rapi dan nyaman dilihat.</p>
+        <span class="sk__more">Lihat detail <b aria-hidden="true">+</b></span>
+      </a>
+    </li>
+    <li class="col" style="--d:2">
+      <a class="sk h-100" href="#skillModal" role="button" data-bs-toggle="modal" data-bs-target="#skillModal"
+         data-name="JavaScript" data-img="img/js.png" data-tags="Interaksi,Animasi,Logika"
+         data-detail="JavaScript membuat halaman bergerak dan merespons pengguna, seperti animasi loading, efek scroll, dan perpindahan antar halaman.">
+        <div class="sk__img"><img src="img/js.png" alt="Logo JavaScript"></div>
+        <span class="sk__no">03</span>
+        <h3 class="sk__name">JavaScript</h3>
+        <p class="sk__desc">Membuat halaman jadi interaktif, mulai dari efek gerak sampai perpindahan antar halaman.</p>
+        <span class="sk__more">Lihat detail <b aria-hidden="true">+</b></span>
+      </a>
+    </li>
+    <li class="col" style="--d:3">
+      <a class="sk h-100" href="#skillModal" role="button" data-bs-toggle="modal" data-bs-target="#skillModal"
+         data-name="Python" data-img="img/python.png" data-tags="Backend,Server,Logika"
+         data-detail="Python dipakai untuk membuat program dan server sederhana di sisi belakang website, misalnya menerima dan memproses data.">
+        <div class="sk__img"><img src="img/python.png" alt="Logo Python"></div>
+        <span class="sk__no">04</span>
+        <h3 class="sk__name">Python</h3>
+        <p class="sk__desc">Dipakai untuk membuat program dan server sederhana di sisi belakang website.</p>
+        <span class="sk__more">Lihat detail <b aria-hidden="true">+</b></span>
+      </a>
+    </li>
+    <li class="col" style="--d:4">
+      <a class="sk h-100" href="#skillModal" role="button" data-bs-toggle="modal" data-bs-target="#skillModal"
+         data-name="MySQL" data-img="img/sql.png" data-tags="Database,Query,Data"
+         data-detail="MySQL adalah database untuk menyimpan data secara terstruktur agar mudah dicari, diubah, dan diolah.">
+        <div class="sk__img"><img src="img/sql.png" alt="Logo MySQL"></div>
+        <span class="sk__no">05</span>
+        <h3 class="sk__name">MySQL</h3>
+        <p class="sk__desc">Menyimpan dan mengelola data dalam database supaya mudah dicari dan diolah.</p>
+        <span class="sk__more">Lihat detail <b aria-hidden="true">+</b></span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- MY JOURNEY -->
+<section class="journey page" id="page-journey" data-page="journey">
+  <div class="tag"><i></i> 03 — My journey</div>
+  <!-- GANTI SEMUA TEKS DI HALAMAN INI DENGAN TEKSMU SENDIRI -->
+  <h2 class="journey__title">Perjalanan <em>sekolahku</em></h2>
+  <div class="journey__text">
+    <p class="journey__lead">Perjalanan belajarku dimulai dari Tikala Adventist School di bangku sekolah dasar. Dari sana aku melanjutkan ke SMP Negeri 6 Manado, lalu ke SMA Negeri 2 Manado.</p>
+    <p class="journey__lead">Setelah lulus SMA, aku melanjutkan kuliah di Universitas Klabat, di Fakultas Ilmu Komputer jurusan Sistem Informasi.</p>
+  </div>
+
+  <div class="jr" id="jr">
+    <div class="jr__stage">
+      <div class="jr__plate" id="jrPlate">
+        <img class="jr__logo is-on" src="img/sd.png" alt="Logo Tikala Adventist School">
+        <img class="jr__logo" src="img/smp.png" alt="Papan nama SMP Negeri 6 Manado">
+        <img class="jr__logo" src="img/sma.png" alt="Logo SMA Negeri 2 Manado">
+        <img class="jr__logo" src="img/unklab.png" alt="Logo Universitas Klabat">
+      </div>
+      <div class="jr__info">
+        <div class="jr__txt" id="jrTxt">
+          <span class="jr__lvl" id="jrLvl">01 — SD</span>
+          <h3 class="jr__name" id="jrName">Tikala Adventist School</h3>
+        </div>
+        <div class="jr__num" id="jrNum" aria-hidden="true">01</div>
+      </div>
+      <div class="jr__ctrl">
+        <span class="jr__count"><b id="jrCur">01</b> / 04</span>
+        <div class="jr__btns">
+          <button type="button" class="jr__btn" id="jrPrev" aria-label="Tahap sebelumnya">&larr;</button>
+          <button type="button" class="jr__btn" id="jrNext" aria-label="Tahap berikutnya">&rarr;</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="jr__side">
+    <ol class="jr__rail" id="jrRail" role="tablist" aria-label="Tahap pendidikan">
+      <li class="jr__item" style="--d:0">
+        <button type="button" class="jr__node is-on" role="tab" aria-selected="true"
+          data-lvl="01 — SD" data-name="Tikala Adventist School" data-about="Tikala Adventist School adalah sekolah dasar tempat aku memulai perjalanan belajarku. Di sini aku mengenal banyak teman dan guru yang baik, aku juga dibekali ilmu pengentahuan yang guru guru sekolah tersebut berikan kepadaku.">
+          <span class="jr__dot"></span>
+          <span class="jr__ntxt"><span class="jr__nlvl">Sekolah Dasar</span><span class="jr__nname">Tikala Adventist School</span></span>
+          <img class="jr__thumb" src="img/sd.png" alt="">
+        </button>
+      </li>
+      <li class="jr__item" style="--d:1">
+        <button type="button" class="jr__node" role="tab" aria-selected="false"
+          data-lvl="02 — SMP" data-name="SMP Negeri 6 Manado" data-about="Setelah aku lulus dari SD aku melanjutkan jenjang pendidikan ke SMP Negeri 6 Manado. Di sini aku belajar banyak hal baru, mulai dari pelajaran akademik hingga kegiatan ekstrakurikuler, dan tak lupa aku membuat banyak teman baru yang sampai sekarang masih berteman dengan diriku.">
+          <span class="jr__dot"></span>
+          <span class="jr__ntxt"><span class="jr__nlvl">Sekolah Menengah Pertama</span><span class="jr__nname">SMP Negeri 6 Manado</span></span>
+          <img class="jr__thumb" src="img/smp.png" alt="">
+        </button>
+      </li>
+      <li class="jr__item" style="--d:2">
+        <button type="button" class="jr__node" role="tab" aria-selected="false"
+          data-lvl="03 — SMA" data-name="SMA Negeri 2 Manado" data-about="Setelah aku lulus di jenjang SMP aku melanjutkan jenjang pendidikan ku di SMA Negeri 2 Manado. Di sini awal mula aku mengenal teknologi lebih lanjut yaitu lewat pelajaran informatika yang membuat ku tertarik untuk mempelajari bidang tersebut, dan aku juga mendapatkan banyak sekali teman baru yang tentu saja masih berteman dengan diriku sampai sekarang.">
+          <span class="jr__dot"></span>
+          <span class="jr__ntxt"><span class="jr__nlvl">Sekolah Menengah Atas</span><span class="jr__nname">SMA Negeri 2 Manado</span></span>
+          <img class="jr__thumb" src="img/sma.png" alt="">
+        </button>
+      </li>
+      <li class="jr__item" style="--d:3">
+        <button type="button" class="jr__node" role="tab" aria-selected="false"
+          data-lvl="04 — Kuliah" data-name="Universitas Klabat" data-about="Setelah aku lulus dari SMA aku pun melanjutkan jenjang pendidikan yang lebih serius yaitu berkuliah di Universitas Klabat. Dengan melewatkan banyak sekali proses pemikiran yang cukup banyak akhirnya saya memutuskan untuk masuk ke fakultas ilmu komputer dengan jurusan yang bukan informatika namun sisten informasi. Di sini aku belajar banyak hal baru yang lebih kompleks dan lebih sulit dari sebelumnya, dan aku juga mendapatkan banyak teman baru juga dari berbagai fakultas.">
+          <span class="jr__dot"></span>
+          <span class="jr__ntxt"><span class="jr__nlvl">Kuliah</span><span class="jr__nname">Universitas Klabat</span></span>
+          <img class="jr__thumb" src="img/unklab.png" alt="">
+        </button>
+      </li>
+    </ol>
+    <div class="jr__about" id="jrAbout">
+      <span class="jr__alabel">Tentang sekolahku</span>
+      <p class="jr__atxt" id="jrAboutTxt"></p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section class="music page" id="page-music" data-page="music">
+  <div class="tag tag--light"><i></i> 04 — Music taste</div>
+  <h2 class="music__title">Lagu yang <em>menemaniku</em></h2>
+  <div class="strip" id="strip"><div class="strip__track" id="stripTrack"></div></div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact page" id="page-contact" data-page="contact">
+  <div class="tag"><i></i> 05 — Contact me</div>
+  <h2 class="contact__title">Hubungi <em>aku!</em></h2>
+  <div class="contact__grid" id="contactGrid">
+    <!-- ISI NOMOR / LINK DI SINI -->
+    <a class="ct" href="https://wa.me/6282194065004" target="_blank" rel="noopener">
+      <img src="img/whatsapp.png" alt="WhatsApp"><span>0821-9406-5004</span>
+    </a>
+    <a class="ct" href="https://www.instagram.com/adnielrs?stkn=MTA4c29vZDB6dnVoOQ==" target="_blank" rel="noopener">
+      <img src="img/instagram.png" alt="Instagram"><span>@adnielrs</span>
+    </a>
+    <a class="ct" href="https://github.com/VISUALENTERTAINMENT-SOS" target="_blank" rel="noopener">
+      <img src="img/github.png" alt="GitHub"><span>github.com/VISUALENTERTAINMENT-SOS</span>
+    </a>
+  </div>
+  <footer><span>© 2026 Anugrah Daniel Junior Sandag</span><a href="#" data-top>Kembali ke atas ↑</a></footer>
+</section>
+
+<!-- Lightbox musik -->
+<div class="lightbox" id="lightbox"><div class="lightbox__cap" id="lbCap"></div></div>
+
+<!-- Detail skill: komponen Modal Bootstrap (isinya diisi otomatis oleh script.js) -->
+<div class="modal fade" id="skillModal" tabindex="-1" aria-labelledby="skillModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="sm__no" id="skillModalNo"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row align-items-center g-4">
+          <div class="col-md-4 text-center"><img class="img-fluid sm__img" id="skillModalImg" alt=""></div>
+          <div class="col-md-8">
+            <h3 class="sm__title" id="skillModalTitle"></h3>
+            <p class="sm__text" id="skillModalText"></p>
+            <div class="d-flex flex-wrap sm__tags" id="skillModalTags"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- [GANTI 3] Bootstrap JS harus SEBELUM script.js -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
