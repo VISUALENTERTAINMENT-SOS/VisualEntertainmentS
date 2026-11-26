@@ -40,7 +40,7 @@ new IntersectionObserver((en,o)=>{if(en[0].isIntersecting){
   at.classList.add('in');o.disconnect();
   const n=at.querySelectorAll('.l').length;
   setTimeout(()=>ap.classList.add('in'),n*250+800);
-}},{threshold:.3}).observe(at);
+}},{threshold:.15}).observe(at);
 
 /* ===== Music: looping strip ===== */
 const strip=document.getElementById('strip'),track=document.getElementById('stripTrack'),lb=document.getElementById('lightbox');
@@ -64,8 +64,9 @@ addEventListener('load',measure);addEventListener('resize',measure);measure();
 strip.addEventListener('pointerdown',e=>{drag=true;moved=0;lx=e.clientX});
 addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-lx;lx=e.clientX;moved+=Math.abs(dx);pos-=dx});
 addEventListener('pointerup',()=>{drag=false});
+addEventListener('pointercancel',()=>{drag=false}); /* HP: browser mengambil alih untuk scroll vertikal */
 strip.addEventListener('wheel',e=>{const d=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:(e.shiftKey?e.deltaY:0);if(d){e.preventDefault();pos+=d}},{passive:false});
-track.addEventListener('pointerover',e=>{const c=e.target.closest('.card');if(!c||drag)return;
+track.addEventListener('pointerover',e=>{if(e.pointerType==='touch')return;const c=e.target.closest('.card');if(!c||drag)return;
   track.querySelectorAll('.card.on').forEach(x=>x.classList.remove('on'));c.classList.add('on');strip.classList.add('focus');target=0});
 strip.addEventListener('pointerleave',()=>{strip.classList.remove('focus');track.querySelectorAll('.card.on').forEach(x=>x.classList.remove('on'));target=.7});
 
@@ -87,7 +88,7 @@ lb.addEventListener('click',closeLb);addEventListener('keydown',e=>e.key==='Esca
 /* ===== Contact ===== */
 const cg=document.getElementById('contactGrid');
 cg.querySelectorAll('.ct').forEach((e,i)=>e.style.setProperty('--d',i));
-new IntersectionObserver((en,o)=>{if(en[0].isIntersecting){cg.classList.add('in');o.disconnect()}},{threshold:.35}).observe(cg);
+new IntersectionObserver((en,o)=>{if(en[0].isIntersecting){cg.classList.add('in');o.disconnect()}},{threshold:.15}).observe(cg);
 
 
 /* ===== Interaktif tambahan ===== */
@@ -98,6 +99,7 @@ const sp=document.createElement('div');sp.className='sprog';document.body.append
 addEventListener('scroll',()=>{
   const m=document.documentElement.scrollHeight-innerHeight;
   sp.style.transform=`scaleX(${m>0?scrollY/m:0})`;
+  document.body.classList.toggle('scrolled',scrollY>40);
 },{passive:true});
 
 /* reveal saat scroll */
@@ -145,7 +147,7 @@ ap.addEventListener('pointerleave',()=>{ap.style.rotate='0deg'});
 
 /* ===== Skills: kartu muncul bergantian saat halaman dibuka ===== */
 const sg=document.getElementById('skillsGrid');
-new IntersectionObserver((en,o)=>{if(en[0].isIntersecting){sg.classList.add('in');o.disconnect()}},{threshold:.2}).observe(sg);
+new IntersectionObserver((en,o)=>{if(en[0].isIntersecting){sg.classList.add('in');o.disconnect()}},{threshold:0,rootMargin:'0px 0px -12% 0px'}).observe(sg);
 
 /* ===== My journey: panel interaktif (pilih tahap, tombol panah, putar otomatis) ===== */
 (function(){
@@ -190,7 +192,7 @@ new IntersectionObserver((en,o)=>{if(en[0].isIntersecting){sg.classList.add('in'
     visible=en[0].isIntersecting;
     if(visible)root.classList.add('in');
     sync();
-  },{threshold:.3}).observe(root);
+  },{threshold:.12}).observe(root);
 
   go(0);
 })();
@@ -225,7 +227,7 @@ if(skillModal)skillModal.addEventListener('show.bs.modal',e=>{
       if(a.dataset.page===key)a.setAttribute('aria-current','page');
       else a.removeAttribute('aria-current');
     });
-    scrollTo({top:0,behavior:'instant'});
+    try{scrollTo({top:0,behavior:'instant'})}catch(_){scrollTo(0,0)}
     dispatchEvent(new Event('resize'));  /* hitung ulang ukuran strip musik */
     dispatchEvent(new Event('scroll'));  /* perbarui garis progres scroll */
   }
@@ -248,6 +250,7 @@ if(skillModal)skillModal.addEventListener('show.bs.modal',e=>{
   function sync(){
     const dark=root.getAttribute('data-theme')==='dark';
     btn.setAttribute('aria-pressed',dark);
+    const mt=document.querySelector('meta[name=theme-color]');if(mt)mt.setAttribute('content',dark?'#151515':'#ecebe8');
     btn.setAttribute('aria-label',dark?'Ganti ke tema terang':'Ganti ke tema gelap');
   }
   btn.addEventListener('click',()=>{
