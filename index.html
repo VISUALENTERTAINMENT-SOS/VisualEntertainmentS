@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ecebe8">
 <title>Sandag — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,7 +12,7 @@
 <!-- [GANTI 1] Bootstrap CSS harus SEBELUM style.css -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
-<script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+<script>try{if(localStorage.getItem("theme")==="dark"){document.documentElement.setAttribute("data-theme","dark");document.querySelector('meta[name=theme-color]').setAttribute("content","#151515")}}catch(e){}</script>
 </head>
 <body class="is-loading">
 
@@ -63,7 +65,7 @@
       <p class="l">Website ini menggunakan 2 Bahasa pemograman utam yaitu CSS, dan JavaScript, dengan HTML sebagai kerangka dalam website. Saya juga menambahkan beberapa tools dalam website saya sebagai pendukung yaitu bootstrap dan VS Code. Ada juga AI yang saya gunakna yaitu ClaudeAI dengan website yang saya deploy dalam GitHub.</p>
       <p class="l">Website ini bertujuan untuk memperkenalkan portofolio diri saya sendiri mulai dari skill yang saya pelajari, perjalanan saya, dan pengalaman saya.</p>
     </div>
-    <figure class="about__photo" id="aboutPhoto"><img src="img/portrait.jpg" alt="Foto Sandag"></figure>
+    <figure class="about__photo" id="aboutPhoto"><img loading="lazy" decoding="async" src="img/portrait.jpg" alt="Foto Sandag"></figure>
   </div>
 </section>
 
@@ -79,7 +81,7 @@
       <a class="sk h-100" href="#skillModal" role="button" data-bs-toggle="modal" data-bs-target="#skillModal"
          data-name="HTML" data-img="img/html.png" data-tags="Struktur,Konten,Navigasi"
          data-detail="HTML adalah kerangka dari setiap website. Di portofolio ini, HTML dipakai untuk menyusun halaman, judul, teks, gambar, dan menu navigasi.">
-        <div class="sk__img"><img src="img/html.png" alt="Logo HTML"></div>
+        <div class="sk__img"><img loading="lazy" decoding="async" src="img/html.png" alt="Logo HTML"></div>
         <span class="sk__no">01</span>
         <h3 class="sk__name">HTML</h3>
         <p class="sk__desc">Membangun kerangka dan isi halaman, seperti judul, teks, gambar, dan menu.</p>
@@ -90,7 +92,7 @@
       <a class="sk h-100" href="#skillModal" role="button" data-bs-toggle="modal" data-bs-target="#skillModal"
          data-name="CSS" data-img="img/css.png" data-tags="Tata letak,Warna,Animasi"
          data-detail="CSS mengatur tampilan: warna, huruf, tata letak, dan animasi. Seluruh desain portofolio ini ditulis dengan CSS.">
-        <div class="sk__img"><img src="img/css.png" alt="Logo CSS"></div>
+        <div class="sk__img"><img loading="lazy" decoding="async" src="img/css.png" alt="Logo CSS"></div>
         <span class="sk__no">02</span>
         <h3 class="sk__name">CSS</h3>
         <p class="sk__desc">Mengatur tampilan, warna, dan animasi supaya website terlihat rapi dan nyaman dilihat.</p>
@@ -101,7 +103,7 @@
       <a class="sk h-100" href="#skillModal" role="button" data-bs-toggle="modal" data-bs-target="#skillModal"
          data-name="JavaScript" data-img="img/js.png" data-tags="Interaksi,Animasi,Logika"
          data-detail="JavaScript membuat halaman bergerak dan merespons pengguna, seperti animasi loading, efek scroll, dan perpindahan antar halaman.">
-        <div class="sk__img"><img src="img/js.png" alt="Logo JavaScript"></div>
+        <div class="sk__img"><img loading="lazy" decoding="async" src="img/js.png" alt="Logo JavaScript"></div>
         <span class="sk__no">03</span>
         <h3 class="sk__name">JavaScript</h3>
         <p class="sk__desc">Membuat halaman jadi interaktif, mulai dari efek gerak sampai perpindahan antar halaman.</p>
@@ -112,7 +114,7 @@
       <a class="sk h-100" href="#skillModal" role="button" data-bs-toggle="modal" data-bs-target="#skillModal"
          data-name="Python" data-img="img/python.png" data-tags="Backend,Server,Logika"
          data-detail="Python dipakai untuk membuat program dan server sederhana di sisi belakang website, misalnya menerima dan memproses data.">
-        <div class="sk__img"><img src="img/python.png" alt="Logo Python"></div>
+        <div class="sk__img"><img loading="lazy" decoding="async" src="img/python.png" alt="Logo Python"></div>
         <span class="sk__no">04</span>
         <h3 class="sk__name">Python</h3>
         <p class="sk__desc">Dipakai untuk membuat program dan server sederhana di sisi belakang website.</p>
@@ -123,7 +125,7 @@
       <a class="sk h-100" href="#skillModal" role="button" data-bs-toggle="modal" data-bs-target="#skillModal"
          data-name="MySQL" data-img="img/sql.png" data-tags="Database,Query,Data"
          data-detail="MySQL adalah database untuk menyimpan data secara terstruktur agar mudah dicari, diubah, dan diolah.">
-        <div class="sk__img"><img src="img/sql.png" alt="Logo MySQL"></div>
+        <div class="sk__img"><img loading="lazy" decoding="async" src="img/sql.png" alt="Logo MySQL"></div>
         <span class="sk__no">05</span>
         <h3 class="sk__name">MySQL</h3>
         <p class="sk__desc">Menyimpan dan mengelola data dalam database supaya mudah dicari dan diolah.</p>
@@ -137,7 +139,7 @@
 <section class="journey page" id="page-journey" data-page="journey">
   <div class="tag"><i></i> 03 — My journey</div>
   <!-- GANTI SEMUA TEKS DI HALAMAN INI DENGAN TEKSMU SENDIRI -->
-  <h2 class="journey__title">History <em>School</em></h2>
+  <h2 class="journey__title">My History<em>Schools</em></h2>
   <div class="journey__text">
     <p class="journey__lead">Perjalanan belajarku dimulai dari Tikala Adventist School di bangku sekolah dasar. Dari sana aku melanjutkan ke SMP Negeri 6 Manado, lalu ke SMA Negeri 2 Manado.</p>
     <p class="journey__lead">Setelah lulus SMA, aku melanjutkan kuliah di Universitas Klabat, di Fakultas Ilmu Komputer jurusan Sistem Informasi.</p>
@@ -146,10 +148,10 @@
   <div class="jr" id="jr">
     <div class="jr__stage">
       <div class="jr__plate" id="jrPlate">
-        <img class="jr__logo is-on" src="img/sd.png" alt="Logo Tikala Adventist School">
-        <img class="jr__logo" src="img/smp.png" alt="Papan nama SMP Negeri 6 Manado">
-        <img class="jr__logo" src="img/sma.png" alt="Logo SMA Negeri 2 Manado">
-        <img class="jr__logo" src="img/unklab.png" alt="Logo Universitas Klabat">
+        <img loading="lazy" decoding="async" class="jr__logo is-on" src="img/sd.png" alt="Logo Tikala Adventist School">
+        <img loading="lazy" decoding="async" class="jr__logo" src="img/smp.png" alt="Papan nama SMP Negeri 6 Manado">
+        <img loading="lazy" decoding="async" class="jr__logo" src="img/sma.png" alt="Logo SMA Negeri 2 Manado">
+        <img loading="lazy" decoding="async" class="jr__logo" src="img/unklab.png" alt="Logo Universitas Klabat">
       </div>
       <div class="jr__info">
         <div class="jr__txt" id="jrTxt">
@@ -174,7 +176,7 @@
           data-lvl="01 — SD" data-name="Tikala Adventist School" data-about="Tikala Adventist School adalah sekolah dasar tempat aku memulai perjalanan belajarku. Di sini aku mengenal banyak teman dan guru yang baik, aku juga dibekali ilmu pengentahuan yang guru guru sekolah tersebut berikan kepadaku.">
           <span class="jr__dot"></span>
           <span class="jr__ntxt"><span class="jr__nlvl">Sekolah Dasar</span><span class="jr__nname">Tikala Adventist School</span></span>
-          <img class="jr__thumb" src="img/sd.png" alt="">
+          <img loading="lazy" decoding="async" class="jr__thumb" src="img/sd.png" alt="">
         </button>
       </li>
       <li class="jr__item" style="--d:1">
@@ -182,7 +184,7 @@
           data-lvl="02 — SMP" data-name="SMP Negeri 6 Manado" data-about="Setelah aku lulus dari SD aku melanjutkan jenjang pendidikan ke SMP Negeri 6 Manado. Di sini aku belajar banyak hal baru, mulai dari pelajaran akademik hingga kegiatan ekstrakurikuler, dan tak lupa aku membuat banyak teman baru yang sampai sekarang masih berteman dengan diriku.">
           <span class="jr__dot"></span>
           <span class="jr__ntxt"><span class="jr__nlvl">Sekolah Menengah Pertama</span><span class="jr__nname">SMP Negeri 6 Manado</span></span>
-          <img class="jr__thumb" src="img/smp.png" alt="">
+          <img loading="lazy" decoding="async" class="jr__thumb" src="img/smp.png" alt="">
         </button>
       </li>
       <li class="jr__item" style="--d:2">
@@ -190,7 +192,7 @@
           data-lvl="03 — SMA" data-name="SMA Negeri 2 Manado" data-about="Setelah aku lulus di jenjang SMP aku melanjutkan jenjang pendidikan ku di SMA Negeri 2 Manado. Di sini awal mula aku mengenal teknologi lebih lanjut yaitu lewat pelajaran informatika yang membuat ku tertarik untuk mempelajari bidang tersebut, dan aku juga mendapatkan banyak sekali teman baru yang tentu saja masih berteman dengan diriku sampai sekarang.">
           <span class="jr__dot"></span>
           <span class="jr__ntxt"><span class="jr__nlvl">Sekolah Menengah Atas</span><span class="jr__nname">SMA Negeri 2 Manado</span></span>
-          <img class="jr__thumb" src="img/sma.png" alt="">
+          <img loading="lazy" decoding="async" class="jr__thumb" src="img/sma.png" alt="">
         </button>
       </li>
       <li class="jr__item" style="--d:3">
@@ -198,7 +200,7 @@
           data-lvl="04 — Kuliah" data-name="Universitas Klabat" data-about="Setelah aku lulus dari SMA aku pun melanjutkan jenjang pendidikan yang lebih serius yaitu berkuliah di Universitas Klabat. Dengan melewatkan banyak sekali proses pemikiran yang cukup banyak akhirnya saya memutuskan untuk masuk ke fakultas ilmu komputer dengan jurusan yang bukan informatika namun sisten informasi. Di sini aku belajar banyak hal baru yang lebih kompleks dan lebih sulit dari sebelumnya, dan aku juga mendapatkan banyak teman baru juga dari berbagai fakultas.">
           <span class="jr__dot"></span>
           <span class="jr__ntxt"><span class="jr__nlvl">Kuliah</span><span class="jr__nname">Universitas Klabat</span></span>
-          <img class="jr__thumb" src="img/unklab.png" alt="">
+          <img loading="lazy" decoding="async" class="jr__thumb" src="img/unklab.png" alt="">
         </button>
       </li>
     </ol>
@@ -224,13 +226,13 @@
   <div class="contact__grid" id="contactGrid">
     <!-- ISI NOMOR / LINK DI SINI -->
     <a class="ct" href="https://wa.me/6282194065004" target="_blank" rel="noopener">
-      <img src="img/whatsapp.png" alt="WhatsApp"><span>0821-9406-5004</span>
+      <img loading="lazy" decoding="async" src="img/whatsapp.png" alt="WhatsApp"><span>0821-9406-5004</span>
     </a>
     <a class="ct" href="https://www.instagram.com/adnielrs?stkn=MTA4c29vZDB6dnVoOQ==" target="_blank" rel="noopener">
-      <img src="img/instagram.png" alt="Instagram"><span>@adnielrs</span>
+      <img loading="lazy" decoding="async" src="img/instagram.png" alt="Instagram"><span>@adnielrs</span>
     </a>
     <a class="ct" href="https://github.com/VISUALENTERTAINMENT-SOS" target="_blank" rel="noopener">
-      <img src="img/github.png" alt="GitHub"><span>github.com/VISUALENTERTAINMENT-SOS</span>
+      <img loading="lazy" decoding="async" src="img/github.png" alt="GitHub"><span>github.com/VISUALENTERTAINMENT-SOS</span>
     </a>
   </div>
   <footer><span>© 2026 Anugrah Daniel Junior Sandag</span><a href="#" data-top>Kembali ke atas ↑</a></footer>
@@ -249,7 +251,7 @@
       </div>
       <div class="modal-body">
         <div class="row align-items-center g-4">
-          <div class="col-md-4 text-center"><img class="img-fluid sm__img" id="skillModalImg" alt=""></div>
+          <div class="col-md-4 text-center"><img loading="lazy" decoding="async" class="img-fluid sm__img" id="skillModalImg" alt=""></div>
           <div class="col-md-8">
             <h3 class="sm__title" id="skillModalTitle"></h3>
             <p class="sm__text" id="skillModalText"></p>
